@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/css.css"/>
+	</head>
+	 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<body>
+		
+	</body>
+</html>
+<script>
+		$(function(){
+            $.ajax({
+                url:"http://localhost:3000/item/list",
+                type:"GET",
+                success:function(e){
+                    for(var i in e){
+                        $(".footer").append('<div><a href="detail.html?id='+e[i].id+'">'+e[i].prcie+'</a><span data-id='+e[i].id+'>X</span></div>')
+                    }
+//                $('span').click(function(){
+//              	  var uid=$(this).attr('data-id');
+//              	  var _this=$(this);
+//              	  $.ajax({
+//              	  	url:'http://localhost:3000/item/del',
+//              	  	type:'post',
+//              	  	data:{id:uid},
+//              	  	success:function(e){
+//              	  		_this.parent().remove()
+//              	  	}
+//              	  })
+//                }) 
+                }
+                
+        })
+        })
+
+    </script>
